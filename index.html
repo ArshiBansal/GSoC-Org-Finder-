@@ -1,226 +1,108 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>
-      Live GSoC 2026 Org Finder & Good First Issue Tracker | FindMyGSoC
-    </title>
-    <meta
-      name="description"
-      content="Live GSoC 2026 Org Finder & Good First Issue Tracker. Discover organizations, compare project fit, and track beginner-friendly GitHub issues in real time."
-    />
-    <link rel="canonical" href="https://findmygsoc.vercel.app/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="FindMyGSoC" />
-    <meta
-      property="og:title"
-      content="Live GSoC 2026 Org Finder & Good First Issue Tracker"
-    />
-    <meta
-      property="og:description"
-      content="Discover Google Summer of Code 2026 organizations and track live good first issues across GitHub."
-    />
-    <meta property="og:url" content="https://findmygsoc.vercel.app/" />
-    <meta
-      property="og:image"
-      content="https://findmygsoc.vercel.app/src/assets/og-image.jpeg"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Live GSoC 2026 Org Finder & Good First Issue Tracker"
-    />
-    <meta
-      name="twitter:description"
-      content="Find your best-fit GSoC 2026 org and track beginner-friendly GitHub issues."
-    />
-    <meta
-      name="twitter:image"
-      content="https://findmygsoc.vercel.app/src/assets/og-image.jpeg"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "FindMyGSoC — GSoC 2026 Org Finder",
-        "url": "https://findmygsoc.vercel.app/",
-        "description": "Find your perfect GSoC 2026 organization filtered by tech stack, domain, and competition level.",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "S3DFX-CYBER"
-        }
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Live GSoC 2026 Org Finder & Good First Issue Tracker | FindMyGSoC</title>
+  <meta name="description" content="Live GSoC 2026 Org Finder & Good First Issue Tracker. Discover organizations, compare project fit, and track beginner-friendly GitHub issues in real time." />
+  <link rel="canonical" href="https://findmygsoc.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FindMyGSoC" />
+  <meta property="og:title" content="Live GSoC 2026 Org Finder & Good First Issue Tracker" />
+  <meta property="og:description" content="Discover Google Summer of Code 2026 organizations and track live good first issues across GitHub." />
+  <meta property="og:url" content="https://findmygsoc.vercel.app/" />
+  <meta property="og:image" content="https://findmygsoc.vercel.app/src/assets/og-image.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Live GSoC 2026 Org Finder & Good First Issue Tracker" />
+  <meta name="twitter:description" content="Find your best-fit GSoC 2026 org and track beginner-friendly GitHub issues." />
+  <meta name="twitter:image" content="https://findmygsoc.vercel.app/src/assets/og-image.jpeg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FindMyGSoC — GSoC 2026 Org Finder",
+      "url": "https://findmygsoc.vercel.app/",
+      "description": "Find your perfect GSoC 2026 organization filtered by tech stack, domain, and competition level.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "S3DFX-CYBER"
       }
-    </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
-    <script>
-      // Theme restoration - runs early to prevent FOUC
-      (function () {
-        try {
-          if (localStorage.getItem("theme") === "dark") {
-            document.documentElement.classList.add("dark");
-          }
-        } catch (e) {
-          // localStorage might be unavailable in some browsers/modes
-          console.warn("Theme restoration failed:", e);
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    // Theme restoration - runs early to prevent FOUC
+    (function(){
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark');
         }
-      })();
-    </script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            screens: {
-              xs: "480px",
-              sm: "640px",
-              md: "768px",
-              lg: "1024px",
-              xl: "1280px",
-              "2xl": "1536px",
-            },
-            colors: {
-              "surface-container-highest": "#e2e2e2",
-              background: "#f9f9f9",
-              "surface-container": "#eeeeee",
-              "primary-container": "#f97316",
-              surface: "#f9f9f9",
-              "surface-variant": "#e2e2e2",
-              "on-background": "#1a1c1c",
-              "on-primary": "#ffffff",
-              "on-surface": "#1a1c1c",
-              error: "#ba1a1a",
-              primary: "#9d4300",
-              "on-surface-variant": "#584237",
-              outline: "#8c7164",
-              "surface-container-lowest": "#ffffff",
-              secondary: "#006c47",
-              "secondary-container": "#8af5be",
-              "on-secondary-container": "#00714b",
-              "on-secondary": "#ffffff",
-              "surface-container-low": "#f3f3f3",
-              "surface-container-high": "#e8e8e8",
-              "surface-dim": "#dadada",
-              "primary-fixed": "#ffdbca",
-              "primary-fixed-dim": "#ffb690",
-              "error-container": "#ffdad6",
-              "on-error-container": "#93000a",
-              "on-secondary-fixed": "#002113",
-              "secondary-fixed-dim": "#71dba6",
-              tertiary: "#5f5e5e",
-              "on-primary-container": "#582200",
-              "surface-tint": "#9d4300",
-            },
-            fontFamily: {
-              headline: ["Plus Jakarta Sans"],
-              body: ["Plus Jakarta Sans"],
-              label: ["Space Grotesk"],
-              mono: ["Fira Code"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
+      } catch(e) {
+        // localStorage might be unavailable in some browsers/modes
+        console.warn('Theme restoration failed:', e);
+      }
+    })();
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          screens: {
+            'xs': '480px',
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
           },
+          colors: {
+            "surface-container-highest":"#e2e2e2","background":"#f9f9f9",
+            "surface-container":"#eeeeee","primary-container":"#f97316",
+            "surface":"#f9f9f9","surface-variant":"#e2e2e2",
+            "on-background":"#1a1c1c","on-primary":"#ffffff",
+            "on-surface":"#1a1c1c","error":"#ba1a1a",
+            "primary":"#9d4300","on-surface-variant":"#584237",
+            "outline":"#8c7164","surface-container-lowest":"#ffffff",
+            "secondary":"#006c47","secondary-container":"#8af5be",
+            "on-secondary-container":"#00714b","on-secondary":"#ffffff",
+            "surface-container-low":"#f3f3f3","surface-container-high":"#e8e8e8",
+            "surface-dim":"#dadada","primary-fixed":"#ffdbca",
+            "primary-fixed-dim":"#ffb690","error-container":"#ffdad6",
+            "on-error-container":"#93000a","on-secondary-fixed":"#002113",
+            "secondary-fixed-dim":"#71dba6","tertiary":"#5f5e5e",
+            "on-primary-container":"#582200","surface-tint":"#9d4300",
+          },
+          fontFamily: {
+            "headline":["Plus Jakarta Sans"],"body":["Plus Jakarta Sans"],
+            "label":["Space Grotesk"],"mono":["Fira Code"]
+          },
+          borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
         },
-      };
-    </script>
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-        vertical-align: middle;
-      }
-      .icon-fill {
-        font-variation-settings:
-          "FILL" 1,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-      .glass {
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-      }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .fade-up {
-        animation: fadeUp 0.6s ease-out both;
-      }
-      @keyframes pulse-dot {
-        0%,
-        100% {
-          opacity: 0.4;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-      .pulse-dot {
-        animation: pulse-dot 2s infinite;
-      }
-      @keyframes gradient-shift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-      .gradient-animate {
-        background-size: 200% 200%;
-        animation: gradient-shift 8s ease infinite;
-      }
-      .hero-gradient {
-        background: linear-gradient(
-          135deg,
-          #9d4300 0%,
-          #f97316 50%,
-          #f59e0b 100%
-        );
-      }
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
+    .icon-fill{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24}
+    .glass{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+    .no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .6s ease-out both}
+    @keyframes pulse-dot{0%,100%{opacity:.4}50%{opacity:1}}
+    .pulse-dot{animation:pulse-dot 2s infinite}
+    @keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .gradient-animate{background-size:200% 200%;animation:gradient-shift 8s ease infinite}
+    .hero-gradient{background:linear-gradient(135deg,#9d4300 0%,#f97316 50%,#f59e0b 100%)}
 
       /* Modal Styles */
       .modal-bg {
@@ -472,40 +354,12 @@
         font-weight: 700;
       }
 
-      .modal-footer {
-        padding: 2rem 3rem 3rem;
-        background: #f9f9f9;
-        display: flex;
-        gap: 1rem;
-        border-top: 1px solid #eee;
-      }
-      .modal-cta {
-        flex: 1;
-        padding: 1rem;
-        border-radius: 1rem;
-        font-size: 0.8rem;
-        font-weight: 800;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        transition: all 0.2s;
-      }
-      .modal-ideas-link {
-        background: #9d4300;
-        color: white;
-      }
-      .modal-ideas-link:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(157, 67, 0, 0.3);
-      }
-      .modal-repo-link {
-        background: white;
-        color: #1a1c1c;
-        border: 1px solid #ddd;
-      }
-      .modal-repo-link:hover {
-        background: #f0f0f0;
-      }
+    .modal-footer { padding: 2rem 3rem 3rem; background: #f9f9f9; display: flex; gap: 1rem; border-top: 1px solid #eee; }
+    .modal-cta { flex: 1; padding: 1rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 800; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s; }
+    .modal-ideas-link { background: #9d4300; color: white; }
+    .modal-ideas-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(157, 67, 0, 0.3); }
+    .modal-repo-link { background: white; color: #1a1c1c; border: 1px solid #ddd; }
+    .modal-repo-link:hover { background: #f0f0f0; }
 
       /* Custom Scrollbar for Modal */
       .modal::-webkit-scrollbar {
@@ -555,71 +409,30 @@
         transform: scale(1.2);
       }
 
-      /* Base mobile-first styles */
-      html,
-      body {
-        width: 100%;
-        overflow-x: hidden;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
+    /* Base mobile-first styles */
+    html, body { width: 100%; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    
+    /* Scroll offset for fixed header */
+    #timeline, #orgs, #guide, #watchlist, #issues, #mentors, #contact {
+      scroll-margin-top: 80px;
+    }
 
-      /* Scroll offset for fixed header */
-      #timeline,
-      #orgs,
-      #guide,
-      #watchlist,
-      #issues,
-      #mentors,
-      #contact {
-        scroll-margin-top: 80px;
-      }
-
-      /* Minimal dark-mode support */
-      .dark body {
-        background: #0f0f10;
-        color: #e5e7eb;
-      }
-      .dark .glass {
-        background: rgba(24, 24, 27, 0.85);
-      }
-      .dark .bg-white {
-        background: #18181b !important;
-      }
-      .dark .bg-surface-container-low {
-        background: #27272a !important;
-        color: #d4d4d8 !important;
-      }
-      .dark .text-zinc-900 {
-        color: #f4f4f5 !important;
-      }
-      .dark .text-zinc-600,
-      .dark .text-zinc-500,
-      .dark .text-zinc-400 {
-        color: #a1a1aa !important;
-      }
-      .dark .text-zinc-300 {
-        color: #a1a1aa !important;
-      }
-      .dark .text-on-surface {
-        color: #f4f4f5 !important;
-      }
-      .dark .text-on-surface-variant {
-        color: #a1a1aa !important;
-      }
-      .dark .border-zinc-100 {
-        border-color: #3f3f46 !important;
-      }
-      .dark .border-zinc-200 {
-        border-color: #3f3f46 !important;
-      }
-      .dark #timeline-milestones .bg-zinc-200 {
-        background-color: #3f3f46 !important;
-      }
-      .dark .hover\:bg-zinc-100\/50:hover {
-        background: rgba(63, 63, 70, 0.45) !important;
-      }
+    /* Minimal dark-mode support */
+    .dark body { background: #0f0f10; color: #e5e7eb; }
+    .dark .glass { background: rgba(24, 24, 27, 0.85); }
+    .dark .bg-white { background: #18181b !important; }
+    .dark .bg-surface-container-low { background: #27272a !important; color: #d4d4d8 !important; }
+    .dark .text-zinc-900 { color: #f4f4f5 !important; }
+    .dark .text-zinc-600, .dark .text-zinc-500, .dark .text-zinc-400 { color: #a1a1aa !important; }
+    .dark .text-zinc-300 { color: #a1a1aa !important; }
+    .dark .text-on-surface { color: #f4f4f5 !important; }
+    .dark .text-on-surface-variant { color: #a1a1aa !important; }
+    .dark .border-zinc-100 { border-color: #3f3f46 !important; }
+    .dark .border-zinc-200 { border-color: #3f3f46 !important; }
+    .dark #timeline-milestones .bg-zinc-200 { background-color: #3f3f46 !important; }
+    .dark .hover\:bg-zinc-100\/50:hover { background: rgba(63, 63, 70, 0.45) !important; }
+ 
 
       /* Light mode - Language pills active state */
       .pill.active {
@@ -828,26 +641,13 @@
         color: #d4d4d8 !important;
       }
 
-      /* Dark mode - Mobile menu */
-      .dark #mobileMenu #menuPanel {
-        background: #18181b !important;
-        border-right: 1px solid #3f3f46;
-      }
-      .dark #mobileMenu .border-zinc-100 {
-        border-color: #3f3f46 !important;
-      }
-      .dark #mobileMenu .text-zinc-900 {
-        color: #f4f4f5 !important;
-      }
-      .dark #mobileMenu .text-zinc-700 {
-        color: #e5e7eb !important;
-      }
-      .dark #mobileMenu .hover\:bg-zinc-100:hover {
-        background: #27272a !important;
-      }
-      .dark #mobileMenu .bg-orange-50 {
-        background: rgba(249, 115, 22, 0.15) !important;
-      }
+    /* Dark mode - Mobile menu */
+    .dark #mobileMenu #menuPanel { background: #18181b !important; border-right: 1px solid #3f3f46; }
+    .dark #mobileMenu .border-zinc-100 { border-color: #3f3f46 !important; }
+    .dark #mobileMenu .text-zinc-900 { color: #f4f4f5 !important; }
+    .dark #mobileMenu .text-zinc-700 { color: #e5e7eb !important; }
+    .dark #mobileMenu .hover\:bg-zinc-100:hover { background: #27272a !important; }
+    .dark #mobileMenu .bg-orange-50 { background: rgba(249, 115, 22, 0.15) !important; }
 
       /* Header dark mode */
       .dark header {
@@ -972,7 +772,7 @@
         <span class="material-symbols-outlined text-zinc-600">menu</span>
       </button>
       
-      <a href="#" class="flex items-center gap-2">
+      <a href="#timeline" class="flex items-center gap-2" id="logoLink">
         <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-container flex items-center justify-center flex-shrink-0">
           <span class="text-white font-bold text-sm">G</span>
         </div>
@@ -985,7 +785,7 @@
         <a class="desktop-nav-link text-zinc-600 hover:text-zinc-900 transition-colors" href="#watchlist" data-section="watchlist">Watchlist</a>
         <a class="desktop-nav-link text-zinc-600 hover:text-zinc-900 transition-colors" href="#issues" data-section="issues">Issues</a>
         <a class="desktop-nav-link text-zinc-600 hover:text-zinc-900 transition-colors" href="#mentors" data-section="mentors">Mentors</a>
-        <a class="desktop-nav-link text-zinc-600 hover:text-zinc-900 transition-colors" href="#guide" data-section="guide">Guide</a>
+        <a class="desktop-nav-link text-zinc-600 hover:text-zinc-900 transition-colors" href="#timeline" data-section="timeline">Timeline</a>
       </nav>
     </div>
     
@@ -998,6 +798,17 @@
     
         <span class="material-symbols-outlined text-zinc-600">
           dark_mode
+        </span>
+      </button>
+    
+      <!-- ANALYTICS BUTTON -->
+      <button id="analyticsBtn" onclick="openAnalytics()"
+        class="inline-flex shrink-0 items-center justify-center p-2 hover:bg-zinc-100/50 rounded-full transition-colors"
+        title="View Analytics & Badges"
+        aria-label="View Analytics and Badges">
+    
+        <span class="material-symbols-outlined text-zinc-600">
+          analytics
         </span>
       </button>
     
@@ -1083,138 +894,66 @@
   </nav>
 </div>
 
-    <!-- ═══════════════════ HERO ═══════════════════ -->
-    <section
-      class="pt-20 sm:pt-28 pb-12 sm:pb-20 px-4 sm:px-6 max-w-7xl mx-auto fade-up"
-    >
-      <div
-        class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
-      >
-        <div class="lg:col-span-7">
-          <div
-            class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-primary mb-6 sm:mb-8"
-          >
-            <span
-              class="material-symbols-outlined text-sm icon-fill"
-              style="color: #f97316"
-              >verified</span
-            >
-            <span
-              class="font-label text-[10px] sm:text-xs uppercase font-bold tracking-widest"
-              >Google Summer of Code 2026</span
-            >
-          </div>
-          <h1
-            class="text-4xl sm:text-5xl md:text-7xl font-extrabold font-headline tracking-tighter text-zinc-900 mb-4 sm:mb-6 leading-[0.95]"
-          >
-            Find Your<br /><span class="text-primary italic"
-              >Perfect GSoC Org</span
-            >
-          </h1>
-          <p
-            class="text-base sm:text-lg text-zinc-600 max-w-xl mb-8 sm:mb-10 leading-relaxed"
-          >
-            Browse all <strong>184</strong> organizations. Filter by language,
-            domain, competition, and live GitHub activity. Land your summer
-            internship.
-          </p>
-          <!-- Search Bar -->
-          <div class="relative max-w-xl mb-6 sm:mb-8">
-            <span
-              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400"
-              >search</span
-            >
-            <input
-              id="hero-search"
-              type="text"
-              placeholder="Search organization names..."
-              class="w-full bg-white border-2 border-zinc-100 rounded-2xl py-3 sm:py-4 pl-12 pr-4 text-sm font-medium focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition-all shadow-lg shadow-zinc-200/50"
-            />
-          </div>
-          <!-- Surprise Button -->
-          <div class="mb-8 sm:mb-10">
-            <button
-              id="surpriseBtn"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-full text-sm font-bold hover:shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2"
-              aria-label="🎲 Surprise Me! - Open a random organization"
-            >
-              <span class="material-symbols-outlined text-sm">casino</span>
-              🎲 Surprise Me!
-            </button>
-          </div>
-          <!-- Stat Badges -->
-          <div class="flex flex-wrap gap-3 sm:gap-4">
-            <div
-              class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-xl border border-zinc-100 shadow-sm"
-            >
-              <span class="material-symbols-outlined text-primary text-lg"
-                >groups</span
-              >
-              <div>
-                <p class="text-[10px] sm:text-xs text-zinc-500">Total Orgs</p>
-                <p class="font-bold text-sm">184</p>
-              </div>
-            </div>
-            <div
-              class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-xl border border-zinc-100 shadow-sm"
-            >
-              <span class="material-symbols-outlined text-secondary text-lg"
-                >code</span
-              >
-              <div>
-                <p class="text-[10px] sm:text-xs text-zinc-500">Languages</p>
-                <p class="font-bold text-sm">30+</p>
-              </div>
-            </div>
-            <div
-              class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-xl border border-zinc-100 shadow-sm"
-            >
-              <span
-                class="material-symbols-outlined text-primary-container text-lg"
-                >category</span
-              >
-              <div>
-                <p class="text-[10px] sm:text-xs text-zinc-500">Domains</p>
-                <p class="font-bold text-sm">15+</p>
-              </div>
-            </div>
-          </div>
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="pt-20 sm:pt-28 pb-12 sm:pb-20 px-4 sm:px-6 max-w-7xl mx-auto fade-up">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"> 
+    <div class="lg:col-span-7">
+      <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-primary mb-6 sm:mb-8">
+        <span class="material-symbols-outlined text-sm icon-fill" style="color:#f97316">verified</span>
+        <span class="font-label text-[10px] sm:text-xs uppercase font-bold tracking-widest">Google Summer of Code 2026</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold font-headline tracking-tighter text-zinc-900 mb-4 sm:mb-6 leading-[0.95]">
+        Find Your<br/><span class="text-primary italic">Perfect GSoC Org</span>
+      </h1>
+      <p class="text-base sm:text-lg text-zinc-600 max-w-xl mb-8 sm:mb-10 leading-relaxed">
+        Browse all <strong>184</strong> organizations. Filter by language, domain, competition, and live GitHub activity. Land your summer internship.
+      </p>
+      <!-- Search Bar -->
+      <div class="relative max-w-xl mb-6 sm:mb-8">
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">search</span>
+        <input id="hero-search" type="text" placeholder="Search organization names..." class="w-full bg-white border-2 border-zinc-100 rounded-2xl py-3 sm:py-4 pl-12 pr-4 text-sm font-medium focus:ring-2 focus:ring-primary/30 focus:border-primary/40 transition-all shadow-lg shadow-zinc-200/50" />
+      </div>
+      <!-- Surprise Button -->
+      <div class="mb-8 sm:mb-10">
+        <button id="surpriseBtn" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-full text-sm font-bold hover:shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2" aria-label="🎲 Surprise Me! - Open a random organization">
+          <span class="material-symbols-outlined text-sm">casino</span>
+          🎲 Surprise Me!
+        </button>
+      </div>
+      <!-- Stat Badges -->
+      <div class="flex flex-wrap gap-3 sm:gap-4">
+        <div class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-xl border border-zinc-100 shadow-sm">
+          <span class="material-symbols-outlined text-primary text-lg">groups</span>
+          <div><p class="text-[10px] sm:text-xs text-zinc-500">Total Orgs</p><p class="font-bold text-sm">184</p></div>
         </div>
-        <!-- Timeline Card -->
-        <div
-          id="timeline"
-          class="lg:col-span-5 fade-up"
-          style="animation-delay: 0.2s"
-        >
-          <div
-            class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl shadow-zinc-200/50 border border-zinc-100"
-          >
-            <div class="flex items-center justify-between mb-6 sm:mb-8">
-              <h3 class="font-headline font-extrabold text-lg sm:text-xl">
-                2026 Timeline
-              </h3>
-              <span
-                class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-wider"
-                >Live</span
-              >
-            </div>
-            <div id="timeline-milestones" class="space-y-4 sm:space-y-5"></div>
-            <div class="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-zinc-100">
-              <div class="flex items-center justify-between">
-                <span class="text-xs text-zinc-500" id="countdown-label"
-                  >Next milestone</span
-                >
-                <span
-                  id="countdown"
-                  class="font-mono text-sm font-bold text-primary"
-                  >--d --h --m</span
-                >
-              </div>
-            </div>
+        <div class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-xl border border-zinc-100 shadow-sm">
+          <span class="material-symbols-outlined text-secondary text-lg">code</span>
+          <div><p class="text-[10px] sm:text-xs text-zinc-500">Languages</p><p class="font-bold text-sm">30+</p></div>
+        </div>
+        <div class="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white rounded-xl border border-zinc-100 shadow-sm">
+          <span class="material-symbols-outlined text-primary-container text-lg">category</span>
+          <div><p class="text-[10px] sm:text-xs text-zinc-500">Domains</p><p class="font-bold text-sm">15+</p></div>
+        </div>
+      </div>
+    </div>
+    <!-- Timeline Card -->
+    <div id="timeline" class="lg:col-span-5 fade-up" style="animation-delay:.2s">
+      <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl shadow-zinc-200/50 border border-zinc-100">
+        <div class="flex items-center justify-between mb-6 sm:mb-8">
+          <h3 class="font-headline font-extrabold text-lg sm:text-xl">2026 Timeline</h3>
+          <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[10px] font-bold uppercase tracking-wider">Live</span>
+        </div>
+        <div id="timeline-milestones" class="space-y-4 sm:space-y-5"></div>
+        <div class="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-zinc-100">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-zinc-500" id="countdown-label">Next milestone</span>
+            <span id="countdown" class="font-mono text-sm font-bold text-primary">--d --h --m</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════════ FILTER CHIPS ═══════════════════ -->
 <section class="px-6 max-w-7xl mx-auto mb-6 fade-up" style="animation-delay:.3s">
@@ -1256,7 +995,7 @@
   <div class="flex items-center justify-between mb-8">
     <p class="font-label text-xs uppercase tracking-widest text-zinc-500">Showing <strong id="orgCount">184</strong> of 184 organizations</p>
     <div class="flex items-center gap-4">
-      <select id="categoryFilter" class="bg-surface-container-low border-none rounded-xl text-xs font-bold focus:ring-0 cursor-pointer text-zinc-600">
+      <select id="categoryFilter" class="bg-surface-container-low border-none rounded-xl text-xs font-bold focus:ring-2 focus:ring-zinc-500 focus:outline-none cursor-pointer text-zinc-600">
         <option value="all">Categories: All</option>
         <option value="web">Web</option>
         <option value="programming">Programming</option>
@@ -1268,13 +1007,13 @@
         <option value="media">Media</option>
         <option value="other">Other</option>
       </select>
-      <select id="complexityFilter" class="bg-surface-container-low border-none rounded-xl text-xs font-bold focus:ring-0 cursor-pointer text-zinc-600">
+      <select id="complexityFilter" class="bg-surface-container-low border-none rounded-xl text-xs font-bold focus:ring-2 focus:ring-zinc-500 focus:outline-none cursor-pointer text-zinc-600">
         <option value="all">Complexity: All</option>
         <option value="beginner">Beginner</option>
         <option value="intermediate">Intermediate</option>
         <option value="advanced">Advanced</option>
       </select>
-      <select id="sortSelect" class="bg-surface-container-low border-none rounded-xl text-xs font-bold focus:ring-0 cursor-pointer text-zinc-600">
+      <select id="sortSelect" class="bg-surface-container-low border-none rounded-xl text-xs font-bold focus:ring-2 focus:ring-zinc-500 focus:outline-none cursor-pointer text-zinc-600">
         <option value="alpha">Sort: A-Z</option>
         <option value="years-desc">Years (High-Low)</option>
         <option value="years-asc">Years (Low-High)</option>
@@ -1471,96 +1210,45 @@
       </div>
     </section>
 
-    <!-- ═══════════════════ WATCHLIST ═══════════════════ -->
-    <section id="watchlist" class="bg-surface-container-low py-20 px-6">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-12 flex items-start justify-between gap-4 flex-wrap">
-          <div>
-            <span
-              class="font-label text-xs font-bold uppercase tracking-[0.2em] text-primary"
-              >Scholarly Sandbox</span
-            >
-            <h2
-              class="text-4xl md:text-5xl font-extrabold font-headline tracking-tighter mt-2"
-            >
-              Watchlist.
-            </h2>
-            <p class="text-zinc-600 mt-4 max-w-2xl">
-              Curate your open-source journey. Track organizations, monitor
-              deadlines, and prepare your proposals for GSoC 2026.
-            </p>
+<!-- ═══════════════════ WATCHLIST ═══════════════════ -->
+<section id="watchlist" class="bg-surface-container-low py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-12 flex items-start justify-between gap-4 flex-wrap">
+      <div>
+        <span class="font-label text-xs font-bold uppercase tracking-[0.2em] text-primary">Scholarly Sandbox</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold font-headline tracking-tighter mt-2">Watchlist.</h2>
+        <p class="text-zinc-600 mt-4 max-w-2xl">Curate your open-source journey. Track organizations, monitor deadlines, and prepare your proposals for GSoC 2026.</p>
+      </div>
+      <button id="clearAllBookmarksBtn"
+        class="hidden mt-8 flex-shrink-0 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-500 border border-red-200 rounded-full px-4 py-2 hover:bg-red-50 transition-colors"
+        title="Remove all bookmarks">
+        <span class="material-symbols-outlined text-sm">delete_sweep</span>
+        Clear All
+      </button>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-4" id="watchlistContainer">
+        <!-- Watchlist items will be rendered here -->
+      </div>
+      <!-- Sidebar -->
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 border border-zinc-100">
+          <h4 class="font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">event</span> Upcoming Deadlines</h4>
+          <div class="space-y-4">
+            <div><p class="text-[10px] font-label uppercase tracking-wider text-zinc-400">MAR 31, 2026</p><p class="text-sm font-bold">Proposal Submission Deadline</p><p class="text-xs text-zinc-500">Ensure your final proposals are submitted by 18:00 UTC.</p></div>
+            <div><p class="text-[10px] font-label uppercase tracking-wider text-zinc-400">APR 21, 2026</p><p class="text-sm font-bold">Review Period Starts</p><p class="text-xs text-zinc-500">Mentors begin ranking of proposals.</p></div>
           </div>
-          <button
-            id="clearAllBookmarksBtn"
-            class="hidden mt-8 flex-shrink-0 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-500 border border-red-200 rounded-full px-4 py-2 hover:bg-red-50 transition-colors"
-            title="Remove all bookmarks"
-          >
-            <span class="material-symbols-outlined text-sm">delete_sweep</span>
-            Clear All
-          </button>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4" id="watchlistContainer">
-            <!-- Watchlist items will be rendered here -->
-          </div>
-          <!-- Sidebar -->
-          <div class="space-y-6">
-            <div class="bg-white rounded-2xl p-6 border border-zinc-100">
-              <h4 class="font-bold mb-4 flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-lg"
-                  >event</span
-                >
-                Upcoming Deadlines
-              </h4>
-              <div class="space-y-4">
-                <div>
-                  <p
-                    class="text-[10px] font-label uppercase tracking-wider text-zinc-400"
-                  >
-                    MAR 31, 2026
-                  </p>
-                  <p class="text-sm font-bold">Proposal Submission Deadline</p>
-                  <p class="text-xs text-zinc-500">
-                    Ensure your final proposals are submitted by 18:00 UTC.
-                  </p>
-                </div>
-                <div>
-                  <p
-                    class="text-[10px] font-label uppercase tracking-wider text-zinc-400"
-                  >
-                    APR 21, 2026
-                  </p>
-                  <p class="text-sm font-bold">Review Period Starts</p>
-                  <p class="text-xs text-zinc-500">
-                    Mentors begin ranking of proposals.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-gradient-to-br from-primary to-primary-container text-white rounded-2xl p-6 relative overflow-hidden"
-            >
-              <div class="absolute top-0 right-0 p-4 opacity-20">
-                <span class="material-symbols-outlined text-5xl"
-                  >auto_awesome</span
-                >
-              </div>
-              <h4 class="font-bold mb-3">AI Application Insight</h4>
-              <p
-                id="aiInsightText"
-                class="text-sm text-orange-100 leading-relaxed mb-4"
-              >
-                Select organizations to get personalized contribution advice.
-              </p>
-              <span
-                class="text-[10px] font-label uppercase tracking-widest text-orange-200"
-                >Automated System Advice</span
-              >
-            </div>
-          </div>
+        <div class="bg-gradient-to-br from-primary to-primary-container text-white rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute top-0 right-0 p-4 opacity-20"><span class="material-symbols-outlined text-5xl">auto_awesome</span></div>
+          <h4 class="font-bold mb-3">AI Application Insight</h4>
+          <p id="aiInsightText" class="text-sm text-orange-100 leading-relaxed mb-4">Select organizations to get personalized contribution advice.</p>
+          <span class="text-[10px] font-label uppercase tracking-widest text-orange-200">Automated System Advice</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- ═══════════════════ GOOD FIRST ISSUES ═══════════════════ -->
     <section id="issues" class="py-20 px-6 max-w-7xl mx-auto">
@@ -2207,7 +1895,7 @@
     </section>
 
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
-<footer class="w-full border-t border-zinc-200 bg-zinc-100">
+<footer class="w-full border-t border-zinc-200 bg-zinc-100 pb-48">
   <div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-7xl mx-auto">
     <div class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
@@ -2216,10 +1904,10 @@
       </div>
       <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">© 2026 S3DFX-CYBER · Built for the Open Source Community</p>
     </div>
-    <nav class="flex flex-wrap gap-6">
-      <a class="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 transition-all" href="https://summerofcode.withgoogle.com/programs/2026/organizations" target="_blank">GSoC 2026</a>
-      <a class="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 transition-all" href="https://github.com/S3DFX-CYBER/GSoC-Org-Finder-" target="_blank">GitHub</a>
-      <a class="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 transition-all" href="#">Privacy</a>
+    <nav class="flex flex-wrap gap-6" aria-label="Footer navigation">
+      <a class="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 transition-all" href="https://summerofcode.withgoogle.com/programs/2026/organizations" target="_blank" rel="noopener noreferrer">GSoC 2026</a>
+      <a class="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 transition-all" href="https://github.com/S3DFX-CYBER/GSoC-Org-Finder-" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 transition-all" href="privacy.html">Privacy</a>
       <a class="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-orange-500 transition-all" href="#contact">Contact</a>
     </nav>
   </div>
@@ -2282,7 +1970,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <a href="#" target="_blank" id="mIdeasBtn" class="modal-cta modal-ideas-link flex items-center justify-center gap-2">
+      <a href="#" target="_blank" rel="noopener noreferrer" id="mIdeasBtn" class="modal-cta modal-ideas-link flex items-center justify-center gap-2">
         <span class="material-symbols-outlined text-lg">lightbulb</span> Project Ideas
       </a>
       <a href="#" target="_blank" id="mRepoBtn" class="modal-cta modal-repo-link flex items-center justify-center gap-2">
@@ -2292,25 +1980,56 @@
   </div>
 </div>
 
-    <!-- ═══════════════════ COMPARE MODAL ═══════════════════ -->
-    <div class="modal-bg compare-bg" id="compareModal">
-      <div class="modal w-full max-w-5xl">
-        <button class="close-btn" onclick="closeCompareModal()">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-        <div class="modal-header pb-4 border-b border-zinc-100">
-          <h2 class="text-3xl font-extrabold font-headline">
-            Compare Organizations
-          </h2>
-          <p class="text-zinc-500 text-sm mt-1">
-            Side-by-side comparison of your selected projects
-          </p>
-        </div>
-        <div class="modal-body p-6 overflow-x-auto" id="compareModalBody">
-          <!-- Injected table -->
-        </div>
+<!-- ═══════════════════ PROPOSAL BUILDER ═══════════════════ -->
+<dialog class="proposal-bg" id="proposalModal" aria-labelledby="pwOrgName">
+  <div class="proposal-workspace">
+    <header class="proposal-header">
+      <div class="proposal-header-title">
+        <h2 id="pwOrgName">Organization Proposal</h2>
+        <p id="pwPrivacyNote">Drafts are stored only on this device when autosave is enabled.</p>
       </div>
+      <label class="proposal-autosave">
+        <input type="checkbox" id="pwAutosaveToggle" aria-describedby="pwPrivacyNote" />
+        Enable autosave
+      </label>
+      <div class="proposal-toolbar">
+        <button type="button" id="pwClearBtn" class="proposal-btn proposal-btn-danger" aria-label="Clear proposal draft">
+          <span class="material-symbols-outlined text-sm">delete</span> Clear
+        </button>
+        <button type="button" id="pwExportMDBtn" class="proposal-btn" aria-label="Export proposal as Markdown">
+          <span class="material-symbols-outlined text-sm">download</span> Markdown
+        </button>
+        <button type="button" id="pwExportPDFBtn" class="proposal-btn proposal-btn-primary" aria-label="Download proposal as PDF">
+          <span class="material-symbols-outlined text-sm">picture_as_pdf</span> PDF
+        </button>
+        <button type="button" id="pwCloseBtn" class="proposal-btn" aria-label="Close proposal builder">
+          <span class="material-symbols-outlined text-sm">close</span> Close
+        </button>
+      </div>
+    </header>
+    <div class="proposal-body">
+      <div class="proposal-editor">
+        <label for="pwEditor" class="sr-only">Proposal markdown editor</label>
+        <textarea id="pwEditor" class="proposal-textarea" spellcheck="true" aria-label="Proposal markdown editor"></textarea>
+      </div>
+      <div id="pwPreview" class="proposal-preview" aria-live="polite" aria-label="Proposal preview"></div>
     </div>
+  </div>
+</dialog>
+
+<!-- ═══════════════════ COMPARE MODAL ═══════════════════ -->
+<div class="modal-bg compare-bg" id="compareModal">
+  <div class="modal w-full max-w-5xl">
+    <button class="close-btn" onclick="closeCompareModal()"><span class="material-symbols-outlined">close</span></button>
+    <div class="modal-header pb-4 border-b border-zinc-100">
+      <h2 class="text-3xl font-extrabold font-headline">Compare Organizations</h2>
+      <p class="text-zinc-500 text-sm mt-1">Side-by-side comparison of your selected projects</p>
+    </div>
+    <div class="modal-body p-6 overflow-x-auto" id="compareModalBody">
+      <!-- Injected table -->
+    </div>
+  </div>
+</div>
 
     <!-- ═══════════════════ JS ═══════════════════ -->
     <script src="agent/scripts/orgs.js"></script>
@@ -2388,91 +2107,56 @@
         }
       }
 
-      // Set active menu item and update UI
-      window.setActiveMenu = function (clickedLink) {
-        // Remove active class from all menu links
-        const allLinks = document.querySelectorAll(".mobile-menu-link");
-        allLinks.forEach((link) => {
-          link.classList.remove("text-orange-600", "bg-orange-50", "font-bold");
-          link.classList.add(
-            "text-zinc-700",
-            "hover:bg-zinc-100",
-            "font-medium",
-          );
-        });
+  // Set active menu item and update UI
+  window.setActiveMenu = function(clickedLink){
+    // Remove active class from all menu links
+    const allLinks = document.querySelectorAll('.mobile-menu-link');
+    allLinks.forEach(link => {
+      link.classList.remove('text-orange-600', 'bg-orange-50', 'font-bold');
+      link.classList.add('text-zinc-700', 'hover:bg-zinc-100', 'font-medium');
+    });
+    
+    // Add active class to clicked link
+    clickedLink.classList.remove('text-zinc-700', 'hover:bg-zinc-100', 'font-medium');
+    clickedLink.classList.add('text-orange-600', 'bg-orange-50', 'font-bold');
+    
+    // Close menu after a short delay
+    setTimeout(() => {
+      toggleMenu();
+    }, 300);
+  };
 
-        // Add active class to clicked link
-        clickedLink.classList.remove(
-          "text-zinc-700",
-          "hover:bg-zinc-100",
-          "font-medium",
-        );
-        clickedLink.classList.add(
-          "text-orange-600",
-          "bg-orange-50",
-          "font-bold",
-        );
-
-        // Close menu after a short delay
-        setTimeout(() => {
-          toggleMenu();
-        }, 300);
-      };
-
-      // Update active state based on scroll position
-      function updateActiveSection() {
-        const sections = [
-          "orgs",
-          "guide",
-          "watchlist",
-          "issues",
-          "mentors",
-          "timeline",
-          "ai-recommender",
-        ];
-        const scrollPosition = window.scrollY + 100; // Offset for fixed header
-
-        let currentSection = "orgs"; // Default
-
-        sections.forEach((sectionId) => {
-          const section = document.getElementById(sectionId);
-          if (section) {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
-
-            if (
-              scrollPosition >= sectionTop &&
-              scrollPosition < sectionBottom
-            ) {
-              currentSection = sectionId;
-            }
-          }
-        });
-
-        // Update mobile menu items
-        const allMobileLinks = document.querySelectorAll(".mobile-menu-link");
-        allMobileLinks.forEach((link) => {
-          const linkSection = link.getAttribute("data-section");
-          if (linkSection === currentSection) {
-            link.classList.remove(
-              "text-zinc-700",
-              "hover:bg-zinc-100",
-              "font-medium",
-            );
-            link.classList.add("text-orange-600", "bg-orange-50", "font-bold");
-          } else {
-            link.classList.remove(
-              "text-orange-600",
-              "bg-orange-50",
-              "font-bold",
-            );
-            link.classList.add(
-              "text-zinc-700",
-              "hover:bg-zinc-100",
-              "font-medium",
-            );
-          }
-        });
+  // Update active state based on scroll position
+  function updateActiveSection() {
+    const sections = ['orgs', 'guide', 'watchlist', 'issues', 'mentors', 'timeline', 'ai-recommender'];
+    const scrollPosition = window.scrollY + 100; // Offset for fixed header
+    
+    let currentSection = 'orgs'; // Default
+    
+    sections.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentSection = sectionId;
+        }
+      }
+    });
+    
+    // Update mobile menu items
+    const allMobileLinks = document.querySelectorAll('.mobile-menu-link');
+    allMobileLinks.forEach(link => {
+      const linkSection = link.getAttribute('data-section');
+      if (linkSection === currentSection) {
+        link.classList.remove('text-zinc-700', 'hover:bg-zinc-100', 'font-medium');
+        link.classList.add('text-orange-600', 'bg-orange-50', 'font-bold');
+      } else {
+        link.classList.remove('text-orange-600', 'bg-orange-50', 'font-bold');
+        link.classList.add('text-zinc-700', 'hover:bg-zinc-100', 'font-medium');
+      }
+    });
 
         // Update desktop navbar items
         const allDesktopLinks = document.querySelectorAll(".desktop-nav-link");
@@ -2565,10 +2249,10 @@
         return githubPathFromValue(value).split("/")[0] || "";
       }
 
-      function githubUrlFromValue(value) {
-        const path = githubPathFromValue(value);
-        return path ? `https://github.com/${path}` : null;
-      }
+  function githubUrlFromValue(value) {
+    const path = githubPathFromValue(value);
+    return path ? `https://github.com/${path}` : null;
+  }
 
       // NOTE: For JS-string contexts inside inline event handlers,
       // we must also escape quotes. Prefer removing inline handlers.
@@ -2578,13 +2262,13 @@
       // ══════════════════════════════════════════════
       let visibleCount = 12;
 
-      let filteredOrgs = [...ORGS];
-      let MENTOR_DATA = {};
-      let mentorDataState = "idle";
-      let compareList = [];
-      const bookmarkedSet = (() => {
-        return new Set(parseStoredBookmarks());
-      })();
+  let filteredOrgs = [...ORGS];
+  let MENTOR_DATA = {};
+  let mentorDataState = 'idle';
+  let compareList = [];
+  const bookmarkedSet = (() => {
+    return new Set(parseStoredBookmarks());
+  })();
 
       const selectedLanguages = new Set();
       let matchAllLanguages = false;
@@ -2732,18 +2416,17 @@
       // NOTE: toggleLanguageMode removed — the matchAllLanguagesToggle checkbox
       // uses a direct event listener (line ~1538) and does not use onclick=.
 
-      window.togglePill = function (el) {
-        const langDisplay = el.dataset.lang || "";
-        const langKey = langDisplay.trim().toLowerCase();
-        if (!langKey) return;
-        const isActive = el.classList.toggle("active");
-        el.setAttribute("aria-pressed", isActive ? "true" : "false");
-        if (selectedLanguages.has(langDisplay))
-          selectedLanguages.delete(langDisplay);
-        else selectedLanguages.add(langDisplay);
-        renderSelectedLanguages();
-        applyFilters();
-      };
+  window.togglePill = function(el) {
+    const langDisplay = el.dataset.lang || '';
+    const langKey = langDisplay.trim().toLowerCase();
+    if (!langKey) return;
+    const isActive = el.classList.toggle('active');
+    el.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    if (selectedLanguages.has(langDisplay)) selectedLanguages.delete(langDisplay);
+    else selectedLanguages.add(langDisplay);
+    renderSelectedLanguages();
+    applyFilters();
+  };
 
       function createDefaultMentorEntry(org) {
         return {
@@ -3622,36 +3305,31 @@
     `;
       }
 
-      function openCompareModal() {
-        renderCompare();
-        renderCompareModal();
-        document.getElementById("compareModal")?.classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
+  function openCompareModal() {
+    renderCompare();
+    renderCompareModal();
+    document.getElementById('compareModal')?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
-      function closeCompareModal() {
-        document.getElementById("compareModal")?.classList.remove("open");
-        document.body.style.overflow = "auto";
-      }
+  function closeCompareModal() {
+    document.getElementById('compareModal')?.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  }
 
-      document
-        .getElementById("compareModal")
-        ?.addEventListener("click", (e) => {
-          if (e.target.id === "compareModal") closeCompareModal();
-        });
+  document.getElementById('compareModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'compareModal') closeCompareModal();
+  });
 
-      document.addEventListener("keydown", (e) => {
-        if (e.key !== "Escape") return;
-        if (
-          document.getElementById("compareModal")?.classList.contains("open")
-        ) {
-          closeCompareModal();
-        } else if (
-          document.getElementById("orgModal")?.classList.contains("open")
-        ) {
-          closeModal();
-        }
-      });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (document.getElementById('compareModal')?.classList.contains('open')) {
+      closeCompareModal();
+    } else if (document.getElementById('orgModal')?.classList.contains('open')) {
+      closeModal();
+    }
+  });
+  
 
       function applyFiltersPreservingVisibleCount() {
         const savedCount = visibleCount;
@@ -3781,42 +3459,33 @@
           return;
         }
 
-        // ── Render one card per bookmarked org ────────────────────────────────────
-        bookmarks.forEach((org) => {
-          const githubOwner = githubOwnerFromValue(org.github);
-          const logoUrl = githubOwner
-            ? `https://github.com/${githubOwner}.png?size=80`
-            : "";
+    // ── Render one card per bookmarked org ────────────────────────────────────
+    bookmarks.forEach(org => {
+      const githubOwner = githubOwnerFromValue(org.github);
+      const logoUrl     = githubOwner
+        ? `https://github.com/${githubOwner}.png?size=80`
+        : '';
 
-          // Category colour mapping (mirrors the existing badge system)
-          const CAT_COLOURS = {
-            science: "bg-blue-100 text-blue-700",
-            programming: "bg-violet-100 text-violet-700",
-            data: "bg-cyan-100 text-cyan-700",
-            web: "bg-green-100 text-green-700",
-            os: "bg-orange-100 text-orange-700",
-            security: "bg-red-100 text-red-700",
-            media: "bg-pink-100 text-pink-700",
-            infra: "bg-yellow-100 text-yellow-700",
-            ai: "bg-purple-100 text-purple-700",
-            dev: "bg-teal-100 text-teal-700",
-            other: "bg-zinc-100 text-zinc-600",
-          };
-          const catClass = CAT_COLOURS[org.cat] || CAT_COLOURS.other;
-          const catLabel =
-            {
-              science: "Science",
-              programming: "Programming",
-              data: "Data",
-              web: "Web",
-              os: "OS / Systems",
-              security: "Security",
-              media: "Media",
-              infra: "Infrastructure",
-              ai: "AI / ML",
-              dev: "Dev Tools",
-              other: "Other",
-            }[org.cat] || org.cat;
+      // Category colour mapping (mirrors the existing badge system)
+      const CAT_COLOURS = {
+        science: 'bg-blue-100 text-blue-700',
+        programming: 'bg-violet-100 text-violet-700',
+        data: 'bg-cyan-100 text-cyan-700',
+        web: 'bg-green-100 text-green-700',
+        os: 'bg-orange-100 text-orange-700',
+        security: 'bg-red-100 text-red-700',
+        media: 'bg-pink-100 text-pink-700',
+        infra: 'bg-yellow-100 text-yellow-700',
+        ai: 'bg-purple-100 text-purple-700',
+        dev: 'bg-teal-100 text-teal-700',
+        other: 'bg-zinc-100 text-zinc-600',
+      };
+      const catClass = CAT_COLOURS[org.cat] || CAT_COLOURS.other;
+      const catLabel = {
+        science:'Science', programming:'Programming', data:'Data', web:'Web',
+        os:'OS / Systems', security:'Security', media:'Media', infra:'Infrastructure',
+        ai:'AI / ML', dev:'Dev Tools', other:'Other',
+      }[org.cat] || org.cat;
 
           const topTags = (org.tags || [])
             .slice(0, 4)
@@ -3848,7 +3517,7 @@
           <div class="flex items-start justify-between gap-2 mb-1.5 flex-wrap">
             <h4 class="font-bold text-zinc-900 leading-tight">${escapeHtml(org.name)}</h4>
             <div class="flex items-center gap-2 flex-shrink-0">
-              <span class="text-[10px] font-label font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${catClass}">${escapeHtml(catLabel)}</span>
+              <span class="text-[10px] font-label font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${category.className}">${escapeHtml(category.label)}</span>
               <span class="text-[10px] font-label font-bold uppercase tracking-wider text-white bg-primary px-2 py-0.5 rounded-full">★ Saved</span>
             </div>
           </div>
@@ -4034,11 +3703,11 @@
           Based on ${bookmarks.length} saved org${bookmarks.length !== 1 ? "s" : ""} · Automated insight
         </p>
       </div>`;
-      }
+  }
 
-      function openModal(name) {
-        const org = ORGS.find((o) => o.name === name);
-        if (!org) return;
+  function openModal(name) {
+    const org = ORGS.find(o => o.name === name);
+    if (!org) return;
 
         document.getElementById("mHeader").innerHTML = `
       <span class="category-tag">${escapeHtml(String(org.cat).toUpperCase())}</span>
@@ -4083,39 +3752,35 @@
           else repoBtn.removeAttribute("href");
         }
 
-        // Copy link button
-        const oldCopy = document.getElementById("mIdeasCopyBtn");
-        if (oldCopy) oldCopy.remove();
-        if (org.ideas) {
-          const copyBtn = document.createElement("button");
-          copyBtn.id = "mIdeasCopyBtn";
-          copyBtn.innerHTML =
-            '<span class="material-symbols-outlined text-lg">content_copy</span> Copy Link';
-          copyBtn.className =
-            "modal-cta modal-repo-link flex items-center justify-center gap-2";
-          copyBtn.onclick = function () {
-            navigator.clipboard.writeText(org.ideas).then(() => {
-              copyBtn.innerHTML =
-                '<span class="material-symbols-outlined text-lg">check_circle</span> Copied!';
-              copyBtn.style.background = "#dcfce7";
-              copyBtn.style.color = "#166534";
-              setTimeout(() => {
-                copyBtn.innerHTML =
-                  '<span class="material-symbols-outlined text-lg">content_copy</span> Copy Link';
-                copyBtn.style.background = "";
-                copyBtn.style.color = "";
-              }, 2000);
-            });
-          };
-          document.getElementById("mIdeasBtn").after(copyBtn);
-        }
-        renderMentorContactSection(org);
-
-        document.getElementById("orgModal").classList.add("open");
-        document.body.classList.add("modal-open");
-        document.documentElement.style.overflow = "hidden";
-        document.body.style.overflow = "hidden";
-      }
+// Copy link button
+const oldCopy = document.getElementById('mIdeasCopyBtn');
+if(oldCopy) oldCopy.remove();
+if(org.ideas){
+  const copyBtn = document.createElement('button');
+  copyBtn.id = 'mIdeasCopyBtn';
+  copyBtn.innerHTML = '<span class="material-symbols-outlined text-lg">content_copy</span> Copy Link';
+  copyBtn.className = 'modal-cta modal-repo-link flex items-center justify-center gap-2';
+  copyBtn.onclick = function(){
+    navigator.clipboard.writeText(org.ideas).then(()=>{
+      copyBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span> Copied!';
+      copyBtn.style.background = '#dcfce7';
+      copyBtn.style.color = '#166534';
+      setTimeout(()=>{
+        copyBtn.innerHTML = '<span class="material-symbols-outlined text-lg">content_copy</span> Copy Link';
+        copyBtn.style.background = '';
+        copyBtn.style.color = '';
+      }, 2000);
+    });
+  };
+  document.getElementById('mIdeasBtn').after(copyBtn);
+}
+    renderMentorContactSection(org);
+     
+    document.getElementById('orgModal').classList.add('open');
+    document.body.classList.add('modal-open');
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
 
       function closeModal() {
         document.getElementById("orgModal").classList.remove("open");
@@ -4243,9 +3908,28 @@
         renderOrgs(true);
       };
 
-  document.getElementById('searchInput').addEventListener('input', applyFilters);
-  document.getElementById('categoryFilter').addEventListener('change', applyFilters);
-  document.getElementById('complexityFilter').addEventListener('change', applyFilters);
+  document.getElementById('searchInput').addEventListener('input', () => {
+    // Track search badge when user types a search query
+    const query = document.getElementById('searchInput').value.trim();
+    if (typeof BadgeSystem !== 'undefined' && query.length > 0) {
+      BadgeSystem.trackSearch();
+    }
+    applyFilters();
+  });
+  document.getElementById('categoryFilter').addEventListener('change', () => {
+    // Track filter badge when user changes category
+    if (typeof BadgeSystem !== 'undefined') {
+      BadgeSystem.trackFilter();
+    }
+    applyFilters();
+  });
+  document.getElementById('complexityFilter').addEventListener('change', () => {
+    // Track filter badge when user changes complexity
+    if (typeof BadgeSystem !== 'undefined') {
+      BadgeSystem.trackFilter();
+    }
+    applyFilters();
+  });
   document.getElementById('sortSelect')?.addEventListener('change', applyFilters);
   document.getElementById('mentorSearchInput')?.addEventListener('input', renderMentorFinder);
   document.getElementById('mentorChannelFilter')?.addEventListener('change', renderMentorFinder);
@@ -4265,21 +3949,16 @@
         .getElementById("surpriseBtn")
         ?.addEventListener("click", openRandomOrg);
 
-      // Hero Search Link
-      const heroSearch = document.getElementById("hero-search");
-      if (heroSearch) {
-        heroSearch.value =
-          document.getElementById("searchInput")?.value ||
-          new URLSearchParams(location.search).get("q") ||
-          "";
-        heroSearch.addEventListener("input", (e) => {
-          document.getElementById("searchInput").value = e.target.value;
-          document
-            .getElementById("orgs")
-            .scrollIntoView({ behavior: "smooth" });
-          applyFilters();
-        });
-      }
+  // Hero Search Link
+  const heroSearch = document.getElementById('hero-search');
+  if (heroSearch) {
+    heroSearch.value = document.getElementById('searchInput')?.value || new URLSearchParams(location.search).get('q') || '';
+    heroSearch.addEventListener('input', (e) => {
+      document.getElementById('searchInput').value = e.target.value;
+      document.getElementById('orgs').scrollIntoView({ behavior: 'smooth' });
+      applyFilters();
+    });
+  }
 
       // Quick-filter chips — mutually exclusive with each other, but additive with
       // language pills, search, and dropdown filters. applyFilters() reads activeChip.
@@ -4476,9 +4155,7 @@
         }
       }
 
-      document
-        .getElementById("mFetchBtn")
-        .addEventListener("click", fetchStats);
+  document.getElementById('mFetchBtn').addEventListener('click', fetchStats);
 
       // Initialize
       updateLanguageModeHint();
@@ -4542,14 +4219,14 @@
           });
         }
 
-        applyFilters();
-      })();
-      renderOrgs();
-      renderWatchlist();
-      updateAIInsights(); // populate AI insight panel on page load
-      loadMentorData();
-      renderGoodFirstIssues();
-      renderCompare();
+    applyFilters();
+  })();
+  renderOrgs();
+  renderWatchlist();
+  updateAIInsights();   // populate AI insight panel on page load
+  loadMentorData();
+  renderGoodFirstIssues();
+  renderCompare();
 
       // Export helpers to global scope
       globalThis.toggleCompare = toggleCompare;
@@ -4648,17 +4325,20 @@
             openHelpModal();
           }
 
-          if (e.key === "Escape") {
-            closeHelpModal();
-          }
-        });
+    if (e.key === 'Escape') {
+      closeHelpModal();
+    }
 
-        window.closeHelpModal = closeHelpModal;
-      });
-    </script>
-    <script src="src/js/githubAnalyzer.js"></script>
-    <script src="src/js/skillExtractor.js"></script>
-    <script src="src/js/recommender.js"></script>
-    <script src="src/js/recommendation-ui.js"></script>
-  </body>
+  });
+
+  window.closeHelpModal = closeHelpModal;
+
+});
+</script>
+<script src="src/js/githubAnalyzer.js"></script>
+<script src="src/js/skillExtractor.js"></script>
+<script src="src/js/recommender.js"></script>
+<script src="src/js/recommendation-ui.js"></script>
+
+</body>
 </html>
